@@ -19,4 +19,14 @@ describe("CommentBox", () => {
   it("Has a button", () => {
     expect(component.find("button")).to.exist;
   });
+
+  describe("Entering some text", () => {
+    it("Shows that text in the text area", () => {
+
+    });
+
+    it("When submitted, clears the input", () => {
+
+    });
+  });
 });
