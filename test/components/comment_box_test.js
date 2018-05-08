@@ -21,12 +21,14 @@ describe("CommentBox", () => {
   });
 
   describe("Entering some text", () => {
+    beforeEach(() => {
+      component.find("textarea").simulate("change", "new comment");
+    });
+
     it("Shows that text in the text area", () => {
-
+      expect(component.find("textarea")).to.have.value("new comment");
     });
 
-    it("When submitted, clears the input", () => {
-
-    });
+    it("When submitted, clears the input", () => {});
   });
 });
