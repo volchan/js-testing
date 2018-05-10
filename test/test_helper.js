@@ -13,10 +13,10 @@ global.document = jsdom.jsdom("<!doctype html><html><body></body></html>");
 global.window = global.document.defaultView;
 const $ = jquery(global.window);
 
-const renderComponent = ComponentClass => {
+const renderComponent = (ComponentClass, props, state) => {
   const componentInstance = TestUtils.renderIntoDocument(
-    <Provider store={createStore(reducers)}>
-      <ComponentClass />
+    <Provider store={createStore(reducers, state)}>
+      <ComponentClass {...props} />
     </Provider>
   );
 
