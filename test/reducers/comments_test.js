@@ -1,14 +1,14 @@
-import { expect } from "../test_helper";
-import commentReducer from "../../src/reducers/comments";
-import { SAVE_COMMENT } from "../../src/actions/types";
+import { expect } from '../test_helper';
+import commentsReducer from '../../src/reducers/comments';
+import { SAVE_COMMENT } from '../../src/actions/types';
 
-describe("Comment Reducer", () => {
-  it("Handles action with unknown type", () => {
-    expect(commentReducer()).to.eql([]);
+describe("Comments Reducer", () => {
+  it("handles action with unknown type", () => {
+    expect(commentsReducer(undefined, {})).to.eql([]);
   });
 
-  it("Handles actions of type 'SAVE_COMMENT'", () => {
-    const action = { type: SAVE_COMMENT, payload: "New Comment" };
-    expect(commentReducer([], action)).to.eql(["New Comment"]);
+  it("handles action of type SAVE_COMMENT", () => {
+    const action = { type: SAVE_COMMENT, payload: "new comment" };
+    expect(commentsReducer([], action)).to.eql(["new comment"]);
   });
 });
